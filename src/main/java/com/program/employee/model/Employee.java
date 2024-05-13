@@ -23,6 +23,7 @@ public class Employee {
     private String name;
     private String surname;
     private int age;
+    private String role;
     private double salary;
     private Date joiningDate;
 }
