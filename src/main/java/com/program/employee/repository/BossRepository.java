@@ -1,4 +1,7 @@
 package com.program.employee.repository;
 
-public interface BossRepository {
+import com.program.employee.model.Boss;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BossRepository extends JpaRepository<Boss, Long> {
 }

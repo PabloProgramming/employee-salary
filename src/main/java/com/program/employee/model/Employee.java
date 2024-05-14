@@ -25,5 +25,5 @@ public class Employee {
     private int age;
     private String role;
     private double salary;
-    private Date joiningDate;
+    private String joiningDate;
 }
