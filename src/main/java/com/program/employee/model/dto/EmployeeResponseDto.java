@@ -1,18 +1,16 @@
 package com.program.employee.model.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Builder //Creation Design Pattern (All constructor combinations)
+@Getter
+@RequiredArgsConstructor
 public class EmployeeResponseDto {
-    private Long id;
-    private String name;
-    private String surname;
-    private int age;
-    private double salary;
-    private String joiningDate;
-    private double salaryRaise = salary + salary*0.05;
+    private final Long id;
+    private final String name;
+    private final String surname;
+    private final int age;
+    private final double salary;
+    private final String joiningDate;
+    private final double salaryRaise;
 }

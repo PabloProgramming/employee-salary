@@ -6,12 +6,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EmployeeMapper {
-    public EmployeeResponseDto entityToResponseDto(Employee employee){
-        EmployeeResponseDto employeeResponseDto = new EmployeeResponseDto();
-        employeeResponseDto.setId(employee.getId());
-        employeeResponseDto.setName(employee.getName());
-        employeeResponseDto.setSalary(employee.getSalary());
-        employeeResponseDto.setSalaryRaise(employee.getSalary() + employee.getSalary()*0.05);
-        return employeeResponseDto;
+    public EmployeeResponseDto entityToResponseDto(final Employee employee){
+        return EmployeeResponseDto.builder()
+                .id(employee.getId())
+                .name(employee.getName())
+                .salary(employee.getSalary())
+                .build();
     }
 }

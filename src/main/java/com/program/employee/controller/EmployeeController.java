@@ -8,8 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @Controller
 @RequestMapping("/employee")
 public class EmployeeController {
@@ -18,18 +16,18 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @PostMapping
-    private ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee) {
+    private ResponseEntity<Employee> saveEmployee(@RequestBody final Employee employee) {
 
         return ResponseEntity.ok(employeeService.saveEmployee(employee));
     }
 
     @GetMapping ("/{id}")
-    private ResponseEntity<EmployeeResponseDto> getEmployeeById(@PathVariable Long id){
+    private ResponseEntity<EmployeeResponseDto> getEmployeeById(@PathVariable final Long id){
         return ResponseEntity.ok(employeeService.getEmployeeById(id));
     }
 
     @PutMapping
-    private ResponseEntity<Employee> changeSalary(@RequestBody Employee employee){
+    private ResponseEntity<Employee> changeSalary(@RequestBody final Employee employee){
         return ResponseEntity.ok(employeeService.changeSalary(employee));
     }
 
