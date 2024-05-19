@@ -17,22 +17,22 @@ public class EmployeeService {
     @Autowired
     EmployeeMapper employeeMapper;
 
-    public Employee saveEmployee(Employee employee) {
+    public Employee saveEmployee(final Employee employee) {
         return employeeRepository.save(employee);
     }
     @SneakyThrows
-    public EmployeeResponseDto getEmployeeById(Long id) {
-        Optional<Employee> employee = employeeRepository.findById(id);
+    public EmployeeResponseDto getEmployeeById(final Long id) {
+        final Optional<Employee> employee = employeeRepository.findById(id);
         if (employee.isPresent()) {
-            return employeeMapper.entityToResponseDto(employee.get());
+            EmployeeResponseDto employeeResponseDto = employeeMapper.entityToResponseDto(employee.get());
+            return employeeResponseDto;
         }
         throw new Exception("Id not found");
     }
 
 
-
-    public Employee changeSalary(Employee employee) {
-        Optional<Employee> employee1 = employeeRepository.findById(employee.getId());
+    public Employee changeSalary(final Employee employee) {
+       final Optional<Employee> employee1 = employeeRepository.findById(employee.getId());
         if (employee1.isPresent()) {
             return employeeRepository.save(employee);
         }

@@ -12,10 +12,16 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Boss extends Employee {
+public class Boss {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private double incentive;
+    private String name;
+    private String surname;
+    private int age;
+    private double salary;
+    private String joiningDate;
+    private double salaryRaise= salary*0.1;
+    private double incentive = 2000;
 
 }
